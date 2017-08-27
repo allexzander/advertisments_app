@@ -8,6 +8,8 @@ import AdPublish from './components/AdPublish';
 import AdDetails from './components/AdDetails';
 import AccountSettings from './components/AccountSettings';
 
+//Finish me!
+
 export default class App extends Component {
   render() {
     return (
