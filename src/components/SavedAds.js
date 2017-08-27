@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import AdvertisementList from './containers/AdvertisementList';
 
 class SavedAds extends React.Component {
 
@@ -12,6 +13,7 @@ class SavedAds extends React.Component {
       <div>
        <div><h3>Hello, I am: "{this.state.className}"</h3></div>
        <div><em>Implement me!</em></div>
+       <AdvertisementList/>
       </div>
     );
   }

@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
-import AdvertisementList from './containers/AdvertisementList';
 
-//Latest ads feed. Sorted with newest ads going first.
+/*
+    Advertisement item. Used in AdvertisementList.
+*/
 
-class LatestAds extends React.Component {
+class Advertisement extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state = {className: "LatestAds"};
+    this.state = {className: "Advertisement"};
   }
 
   render() {
@@ -15,11 +16,10 @@ class LatestAds extends React.Component {
       <div>
        <div><h3>Hello, I am: "{this.state.className}"</h3></div>
        <div><em>Implement me!</em></div>
-       <AdvertisementList/>
       </div>
     );
   }
 
 }
 
-export default LatestAds;
+export default Advertisement;
