@@ -12,12 +12,27 @@ class Advertisement extends React.Component {
   }
 
   render() {
+    if (this.props.element)
+    {
+      this.validateData();
+    }
+
+    var elementValue = "";
+
+    if (this.props.element) {
+      elementValue = elementValue.concat(this.props.element.title, " ", this.props.element.description, " ", this.props.element.timeAdded);
+    }
+
     return (
-      <div>
-       <div><h3>Hello, I am: "{this.state.className}"</h3></div>
-       <div><em>Implement me!</em></div>
-      </div>
+      <li>{elementValue}</li>
     );
+  }
+
+  validateData() {
+    if (!this.props.element.title || !this.props.element.description || !this.props.element.timeAdded)
+    {
+      throw new Error("Incorrect data passed to Advertisement");
+    }
   }
 
 }

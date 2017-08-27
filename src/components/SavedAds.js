@@ -11,9 +11,10 @@ class SavedAds extends React.Component {
   render() {
     return (
       <div>
-       <div><h3>Hello, I am: "{this.state.className}"</h3></div>
-       <div><em>Implement me!</em></div>
+       <div>
+       <h3>Saved adds</h3>
        <AdvertisementList/>
+      </div>
       </div>
     );
   }

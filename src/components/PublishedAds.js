@@ -13,8 +13,10 @@ class PublishedAds extends React.Component {
   render() {
     return (
       <div>
-       <div><h3>Hello, I am: "{this.state.className}"</h3></div>
-       <div><em>Implement me!</em></div>
+       <div>
+       <h3>Adds, published by me</h3>
+       <AdvertisementList/>
+      </div>
        <AdvertisementList/>
       </div>
     );

@@ -3,6 +3,10 @@ import AdvertisementList from './containers/AdvertisementList';
 
 //Latest ads feed. Sorted with newest ads going first.
 
+//----------------------------TODO: Remove this dummy code-----------------------------------------------
+
+//-------------------------------------------------------------------------------------------------------
+
 class LatestAds extends React.Component {
 
   constructor(props) {
@@ -13,8 +17,7 @@ class LatestAds extends React.Component {
   render() {
     return (
       <div>
-       <div><h3>Hello, I am: "{this.state.className}"</h3></div>
-       <div><em>Implement me!</em></div>
+       <h3>Latest adds</h3>
        <AdvertisementList/>
       </div>
     );
