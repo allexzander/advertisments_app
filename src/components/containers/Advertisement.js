@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import "../../css/advertisementListItem.css";
 
 /*
     Advertisement item. Used in AdvertisementList.
@@ -20,7 +21,8 @@ class Advertisement extends React.Component {
     var elementValue = "";
 
     if (this.props.element) {
-      elementValue = elementValue.concat(this.props.element.title, " ", this.props.element.description, " ", this.props.element.timeAdded);
+      elementValue = <span className="ad_list_element_title">{this.props.element.title}
+        <span className="ad_list_element_description">{this.props.element.description}</span> <span className="ad_list_element_timestamp">{this.props.element.timeAdded}</span></span>;
     }
 
     return (

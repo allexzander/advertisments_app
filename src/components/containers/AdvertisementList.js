@@ -13,9 +13,9 @@ class AdvertisementList extends React.Component {
     this.state = {className: "AdvertisementList"};
     this.items = [];
 
-    this.items.push({ title: "New appartment is on sale", description: "New, furnished appartment in the city center...", timeAdded: "25 AUG 2017"});
-    this.items.push({ title: "New appartment is on sale1", description: "New, furnished appartment in the city center...", timeAdded: "26 AUG 2017"});
-    this.items.push({ title: "New appartment is on sale2", description: "New, furnished appartment in the city center...", timeAdded: "27 AUG 2017"});
+    this.items.push({ title: "New appartment is on sale", description: "New, furnished appartment in the city center...", timeAdded: (new Date()).toString()});
+    this.items.push({ title: "New appartment is on sale1", description: "New, furnished appartment in the city center...", timeAdded: (new Date()).toString()});
+    this.items.push({ title: "New appartment is on sale2", description: "New, furnished appartment in the city center...", timeAdded: (new Date()).toString()});
   }
 
   render() {
