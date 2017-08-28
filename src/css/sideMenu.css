@@ -1,0 +1,19 @@
+/*#slider_menu {
+    clear: both;
+    float: left;
+}*/
+
+ul.side_menu_nav_list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+ul.side_menu_nav_list li.side_menu_nav_list_item button {
+    min-width: 120px;
+    border: 1px solid green;
+    background-color: #84BDB1;
+    color: #F00442;
+    text-align: left;
+    padding: 2px;
+}
