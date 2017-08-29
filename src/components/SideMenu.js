@@ -13,18 +13,13 @@ class SideMenu extends React.Component {
   constructor(props) {
     super(props);
     //TODO: remove this from state
-    this.state = {shouldShowBox: true};
+    this.state = {expanded: false};
   }
 
   handleClick(e) {
     console.log('this is:', e.target['id']);
+    this.setState({expanded: true})
   }
-  
-  toggleBox() {
-    this.setState({
-      shouldShowBox: !this.state.shouldShowBox
-    });
-  };
 
   render() {
     let itemNames = ["All Ads", "Saved Ads", "My Ads", "New Add", "Account Settings", "Log out"];
@@ -36,28 +31,25 @@ class SideMenu extends React.Component {
       menuItems.push(<li key={i} className="side_menu_nav_list_item"><button id={itemIds[i]} onClick={(e) => this.handleClick(e)}>{itemNames[i]}</button></li>);
     }
 
+    let listWithTransition = <ReactCSSTransitionGroup transitionName="anim" transitionAppear={true} transitionAppearTimeout={5000} transitionEnter={false} transitionLeave={false}>
+    <ul className="side_menu_nav_list">
+      {menuItems}
+    </ul>
+ </ReactCSSTransitionGroup>;
+
+let listWithNoTransition = 
+<ul className="side_menu_nav_list">
+  {menuItems}
+</ul>;
+
+    let listToRender = this.state.expanded ? listWithTransition : listWithNoTransition;
+
+    console.log('this state:', this.state);
+
     //TODO: make one of transitions work! https://medium.com/appifycanada/animations-with-reacttransitiongroup-4972ad7da286
     return (
       <div id ="slider_menu">
-        <ul className="side_menu_nav_list">
-        <ReactCSSTransitionGroup
-          transitionName="example"
-          transitionAppear={true}
-          transitionAppearTimeout={500}
-          transitionEnterTimeout={500}
-          transitionLeaveTimeout={300}>
-          {menuItems}
-        </ReactCSSTransitionGroup>
-        </ul>
-        <TransitionGroup>
-        { this.state.shouldShowBox && <div className="box"/>}
-      </TransitionGroup>
-      <button
-        className="toggle-btn"
-        onClick={(e) => this.toggleBox()}
-      >
-        toggle
-      </button>
+        {listToRender}
       </div>
     );
   }
